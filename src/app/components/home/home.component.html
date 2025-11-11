@@ -1,0 +1,302 @@
+<!-- Container -->
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#0F172A; line-height:1.6; background:#F8FAFC;">
+  <!-- Header (100px) -->
+  <header class="topbar" style="background:linear-gradient(90deg,#0F172A,#0D9488); color:#F8FAFC; height:100px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; position:sticky; top:0; z-index:1000;">
+    <div style="display:flex; align-items:center; gap:24px; white-space:nowrap;">
+      <div class="brand" style="font-weight:800; letter-spacing:0.6px; white-space:nowrap;">SPENDWISE EXPENSE TRACKER</div>
+      <nav class="links" style="display:flex; gap:16px; align-items:center; white-space:nowrap;">
+        <a href="#hero" (click)="$event.preventDefault(); navigateTo('hero')" style="text-decoration:none; color:#E2E8F0; font-weight:600;">Home</a>
+        <a href="#features" (click)="$event.preventDefault(); navigateTo('features')" style="text-decoration:none; color:#E2E8F0; font-weight:600;">Features</a>
+        <a href="#plans" (click)="$event.preventDefault(); navigateTo('plans')" style="text-decoration:none; color:#E2E8F0; font-weight:600;">Plans</a>
+        <a href="#security" (click)="$event.preventDefault(); navigateTo('security')" style="text-decoration:none; color:#E2E8F0; font-weight:600;">Security</a>
+        <a href="#testimonials" (click)="$event.preventDefault(); navigateTo('testimonials')" style="text-decoration:none; color:#E2E8F0; font-weight:600;">Testimonials</a>
+      </nav>
+    </div>
+    <div class="burger" style="display:none; align-items:center; justify-content:center; cursor:pointer;" (click)="toggleMenu()" aria-label="Toggle navigation" role="button" tabindex="0">
+      <mat-icon style="font-size:28px; color:#F8FAFC;">menu</mat-icon>
+    </div>
+  </header>
+
+  <!-- Mobile menu card -->
+  <mat-card class="mobile-menu" *ngIf="isMenuOpen" style="position:fixed; top:100px; right:16px; left:16px; z-index:999; padding:8px 0; border-radius:12px; box-shadow:0 16px 40px rgba(15,23,42,0.22);">
+    <a href="#hero" (click)="$event.preventDefault(); navigateTo('hero')" style="display:block; padding:12px 16px; text-decoration:none; color:#0F172A; font-weight:600;">Home</a>
+    <a href="#features" (click)="$event.preventDefault(); navigateTo('features')" style="display:block; padding:12px 16px; text-decoration:none; color:#0F172A; font-weight:600;">Features</a>
+    <a href="#plans" (click)="$event.preventDefault(); navigateTo('plans')" style="display:block; padding:12px 16px; text-decoration:none; color:#0F172A; font-weight:600;">Plans</a>
+    <a href="#security" (click)="$event.preventDefault(); navigateTo('security')" style="display:block; padding:12px 16px; text-decoration:none; color:#0F172A; font-weight:600;">Security</a>
+    <a href="#testimonials" (click)="$event.preventDefault(); navigateTo('testimonials')" style="display:block; padding:12px 16px; text-decoration:none; color:#0F172A; font-weight:600;">Testimonials</a>
+  </mat-card>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#F1F5F9,#FFFFFF); padding:56px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08);">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 420px;">
+          <h1 style="margin:0 0 12px 0; font-size:40px; line-height:1.2; color:#0F172A;">See every expense. Control every month.</h1>
+          <p style="margin:0 0 16px 0; font-size:16px; color:#334155;">SpendWise groups your purchases automatically, shows budgets in real time, and turns receipts into line items—so you can spend with confidence.</p>
+          <ul style="margin:0 0 20px 0; padding-left:18px; color:#334155;">
+            <li>Connect your bank or import CSVs in minutes</li>
+            <li>Smart categories that learn as you go</li>
+            <li>Budgets, alerts, and weekly insights to stay on track</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button mat-raised-button color="primary" style="background:#0F172A; color:#F8FAFC; padding:0 20px; height:44px; border-radius:8px; font-weight:700;">Get Started Free</button>
+            <button mat-stroked-button style="height:44px; border-radius:8px; border-color:#CBD5E1; color:#0F172A;" (click)="navigateTo('how-it-works')">See How It Works</button>
+          </div>
+          <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">Free plan available. No credit card required.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:40px 16px; background:#FFFFFF;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:24px; border-radius:14px;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">Built to make money management feel effortless</h2>
+      <p style="margin:0 0 12px 0; color:#475569;">We created SpendWise after years of juggling spreadsheets and clunky apps. The goal: a private, fast, and friendly way to understand your spending without extra work.</p>
+      <ul style="margin:0 0 16px 0; padding-left:18px; color:#334155;">
+        <li>Private by design: your data is yours—export anytime</li>
+        <li>Fast and dependable: built for busy days and tight budgets</li>
+        <li>Works everywhere: web, iOS, and Android</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#CBD5E1; color:#0F172A;">Our Story</button>
+        <button mat-raised-button color="accent" style="background:#F59E0B; color:#0F172A; font-weight:700;">Contact Support</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">Questions? Email support&#64;spendwise.app</p>
+    </mat-card>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding:40px 16px; background:#F8FAFC;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:24px; border-radius:14px;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">Clarity that leads to better choices</h2>
+      <p style="margin:0 0 12px 0; color:#475569;">When you can see patterns and leaks, you can fix them. SpendWise turns chaos into calm with clear categories, helpful alerts, and simple reports.</p>
+      <ul style="margin:0 0 16px 0; padding-left:18px; color:#334155;">
+        <li>Stop overspending with real-time budget guardrails</li>
+        <li>Spot subscriptions and fees you don't use</li>
+        <li>Plan ahead with forecasts and weekly summaries</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#CBD5E1; color:#0F172A;" (click)="navigateTo('plans')">Compare Plans</button>
+        <button mat-raised-button color="primary" style="background:#0D9488; color:#0F172A; font-weight:700;">Read User Stories</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">Join thousands building smarter habits one purchase at a time.</p>
+    </mat-card>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:48px 16px; background:#FFFFFF;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">Everything you need to track, understand, and improve</h2>
+      <p style="margin:0 0 24px 0; color:#475569;">From quick capture to deep insights, SpendWise covers the full flow.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px;">
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>account_balance</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">Secure Bank Sync</div>
+          </div>
+          <div style="color:#334155;">Connect major banks with read-only access to pull transactions safely and keep balances current.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>photo_camera</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">Receipt Scanner</div>
+          </div>
+          <div style="color:#334155;">Snap a picture and let OCR extract totals, tax, and merchant—perfect for cash purchases.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>sell</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">Smart Categories</div>
+          </div>
+          <div style="color:#334155;">Rules learn from your edits so future transactions file themselves correctly.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>notifications_active</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">Budgets & Alerts</div>
+          </div>
+          <div style="color:#334155;">Set monthly caps per category and get timely nudges before you overspend.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>insights</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">Reports & Trends</div>
+          </div>
+          <div style="color:#334155;">See weekly and monthly trends, top merchants, and recurring charges at a glance.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>public</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">Multi-currency Support</div>
+          </div>
+          <div style="color:#334155;">Traveling or paid in another currency? We convert with daily rates and keep source amounts.</div>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+        <button mat-raised-button color="accent" style="background:#F59E0B; color:#0F172A; font-weight:700;">Explore the App</button>
+        <button mat-stroked-button style="border-color:#CBD5E1; color:#0F172A;" (click)="navigateTo('how-it-works')">View Demo Data</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">You control categories, rules, and notifications—tune as you like.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" style="padding:48px 16px; background:#F8FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">From setup to insight in three quick steps</h2>
+      <p style="margin:0 0 24px 0; color:#475569;">No spreadsheets, no headaches—just clear numbers.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;">
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>power</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">1) Connect</div>
+          </div>
+          <div style="color:#334155;">Link your bank securely or drop in a CSV. We fetch and clean transactions in seconds.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>auto_awesome</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">2) Track</div>
+          </div>
+          <div style="color:#334155;">Set budgets, snap receipts, and let rules auto-categorize future purchases.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; color:#0D9488;">
+            <mat-icon>trending_up</mat-icon>
+            <div style="font-weight:700; color:#0F172A;">3) Improve</div>
+          </div>
+          <div style="color:#334155;">Use reports and alerts to cut waste, plan ahead, and hit savings goals.</div>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#0D9488; color:#0F172A; font-weight:700;">Start in 2 Minutes</button>
+        <button mat-stroked-button style="border-color:#CBD5E1; color:#0F172A;">Try with Demo Data</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">You can onboard without connecting a bank—import a CSV to try it out.</p>
+    </div>
+  </section>
+
+  <!-- Plans & Pricing -->
+  <section id="plans" style="padding:48px 16px; background:#FFFFFF;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">Choose a plan that fits your money goals</h2>
+      <p style="margin:0 0 24px 0; color:#475569;">Start free. Upgrade anytime—your data comes with you.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #E2E8F0; border-radius:14px; padding:20px; background:#FFFFFF;">
+          <mat-card-title style="font-size:18px; color:#0F172A;">Free</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:28px; color:#0F172A;">$0</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#334155;">
+            <li>Manual CSV import</li>
+            <li>Up to 2 budgets</li>
+            <li>Receipt capture (30 scans/mo)</li>
+            <li>Export to CSV</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#CBD5E1; color:#0F172A; height:42px;">Create Free Account</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:2px solid #0D9488; border-radius:16px; padding:22px; background:#0D9488; color:#0F172A; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <mat-card-title style="font-size:18px; color:#0F172A;">Plus</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:28px; color:#0F172A;">$4.99/mo</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#0F172A;">
+            <li>Bank sync for 2 accounts</li>
+            <li>Unlimited budgets</li>
+            <li>Receipt capture (200 scans/mo)</li>
+            <li>Custom category rules</li>
+            <li>Email summaries</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%; height:44px; background:#F59E0B; color:#0F172A; font-weight:800;">Start 14‑Day Trial</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #E2E8F0; border-radius:14px; padding:20px; background:#FFFFFF;">
+          <mat-card-title style="font-size:18px; color:#0F172A;">Pro</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:28px; color:#0F172A;">$9.99/mo</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#334155;">
+            <li>Bank sync for unlimited accounts</li>
+            <li>Unlimited receipt scans</li>
+            <li>Advanced reports & forecasts</li>
+            <li>Shared budgets (2 members)</li>
+            <li>Priority support</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#CBD5E1; color:#0F172A; height:42px;">Upgrade to Pro</button>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#0F172A; color:#F8FAFC; font-weight:700;">Start Free</button>
+        <button mat-stroked-button style="border-color:#CBD5E1; color:#0F172A;">See Feature Comparison</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">Prices in USD. Taxes may apply.</p>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section id="security" style="padding:48px 16px; background:#F8FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">Your data, locked down and under your control</h2>
+      <p style="margin:0 0 24px 0; color:#475569;">We use bank-grade encryption and read-only connections. You can export or delete your data anytime.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;">
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0; color:#334155;">256-bit encryption in transit and at rest</mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0; color:#334155;">OAuth connections with no stored credentials</mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0; color:#334155;">Read-only data access—no ability to move money</mat-card>
+        <mat-card class="feature-card" style="border-radius:12px; padding:18px; border:1px solid #E2E8F0; color:#334155;">Granular controls for categories, rules, and exports</mat-card>
+      </div>
+      <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#CBD5E1; color:#0F172A;">Read Security Overview</button>
+        <button mat-raised-button color="accent" style="background:#F59E0B; color:#0F172A; font-weight:700;">View Data Practices</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748B;">Report a security issue: security&#64;spendwise.app</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="padding:48px 16px; background:#FFFFFF;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0F172A;">Trusted by mindful spenders and freelancers</h2>
+      <p style="margin:0 0 24px 0; color:#475569;">Real results from people who wanted a simpler way to manage money.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #E2E8F0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#0F172A; font-weight:700;">Maya R. — <span style="font-weight:500; color:#334155;">Freelance Designer</span></p>
+          <p style="margin:0; color:#334155;">“I finally know where my money goes each week. The budget alerts helped me cut food delivery by 40%.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #E2E8F0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#0F172A; font-weight:700;">Jordan P. — <span style="font-weight:500; color:#334155;">Software Engineer</span></p>
+          <p style="margin:0; color:#334155;">“Set it up on a Saturday morning and haven't touched a spreadsheet since. Categories just work.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #E2E8F0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#0F172A; font-weight:700;">Alicia K. — <span style="font-weight:500; color:#334155;">Graduate Student</span></p>
+          <p style="margin:0; color:#334155;">“I love the weekly digest. It tells me exactly what changed and what to watch next month.”</p>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0F172A; color:#E2E8F0;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:240px;">
+        <div style="font-weight:800; margin-bottom:6px;">SPENDWISE EXPENSE TRACKER</div>
+        <div style="font-size:13px; color:#94A3B8;">SpendWise helps you track spending, set smart budgets, and build better habits—without giving up privacy or time.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F1F5F9;">Product</div>
+          <a href="#features" (click)="$event.preventDefault(); navigateTo('features')" style="display:block; text-decoration:none; color:#CBD5E1; margin-bottom:6px;">Features</a>
+          <a href="#how-it-works" (click)="$event.preventDefault(); navigateTo('how-it-works')" style="display:block; text-decoration:none; color:#CBD5E1; margin-bottom:6px;">How it works</a>
+          <a href="#plans" (click)="$event.preventDefault(); navigateTo('plans')" style="display:block; text-decoration:none; color:#CBD5E1; margin-bottom:6px;">Plans</a>
+          <a href="#security" (click)="$event.preventDefault(); navigateTo('security')" style="display:block; text-decoration:none; color:#CBD5E1;">Security</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F1F5F9;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); navigateTo('about')" style="display:block; text-decoration:none; color:#CBD5E1; margin-bottom:6px;">About</a>
+          <a href="#why" (click)="$event.preventDefault(); navigateTo('why')" style="display:block; text-decoration:none; color:#CBD5E1; margin-bottom:6px;">Why</a>
+          <a href="#hero" (click)="$event.preventDefault(); navigateTo('hero')" style="display:block; text-decoration:none; color:#CBD5E1;">Contact</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F1F5F9;">Legal</div>
+          <a href="#" style="display:block; text-decoration:none; color:#CBD5E1; margin-bottom:6px;">Privacy Policy</a>
+          <a href="#" style="display:block; text-decoration:none; color:#CBD5E1;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#1F2937;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#94A3B8;">© 2025 SPENDWISE EXPENSE TRACKER. All rights reserved.</div>
+  </footer>
+</div>
